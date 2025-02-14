@@ -50,7 +50,7 @@ public class EntityCropSupport extends EntitySemiblockBase {
 
         if (level.random.nextDouble() < ConfigHelper.common().machines.cropSticksGrowthBoostChance.get() && !getBlockState().isAir(level, getBlockPos())) {
             if (!level.isClientSide) {
-                getBlockState().tick((ServerWorld) level, getBlockPos(), level.random);
+                getBlockState().randomTick((ServerWorld) level, getBlockPos(), level.random);
             } else {
                 level.addParticle(ParticleTypes.HAPPY_VILLAGER, getBlockPos().getX() + 0.5, getBlockPos().getY() + 0.5, getBlockPos().getZ() + 0.5, 0, 0, 0);
             }
